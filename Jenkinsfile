@@ -12,5 +12,10 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('delivery') {
+      steps {
+        sh 'pyinstaller --onefile sources/add2vals.py'
+      }
+    }
   }
 }
