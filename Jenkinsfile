@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('error') {
+    stage('build') {
       steps {
-        sh 'npm install'
+        sh 'python -m py_compile sources/add2vals.py sources/calc.py'
       }
     }
     stage('delivery') {
